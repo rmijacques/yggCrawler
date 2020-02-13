@@ -1,9 +1,22 @@
 async function newSearch() {
     var search = document.getElementById("searchbox").value;
     var cs = await browser.storage.local.get("currentSearches");
-    console.log(cs.currentSearches);
+
     cs.currentSearches.push(search);
     await browser.storage.local.set(cs);
+    loadList()
+}
+
+async function deleteSearch(search) {
+    var cs = await browser.storage.local.get("currentSearches");
+
+    for( var i = 0; i < cs.currentSearches.length; i++){ 
+        if ( cs.currentSearches[i] === search) {
+          cs.currentSearches.splice(i, 1); 
+        }
+     }
+    await browser.storage.local.set(cs);
+    window.location.reload();
 }
 
 
@@ -20,14 +33,22 @@ function insertElementIntoSearchList(text) {
     titre.setAttribute("class", "col-9 overflow-hidden");
     titre.innerHTML = text;
 
-    var actu = document.createElement("img");
-    actu.setAttribute("class", "col delete-search");
-    actu.setAttribute("src","../../icons/trashcan.png");
-    actu.setAttribute("height","30");
-    actu.innerHTML = "O";
+    var imgButton = document.createElement("button");
+    imgButton.setAttribute("class","btn btn-danger delete-button btn-sm");
+    imgButton.addEventListener("click",function(){
+        deleteSearch(text);
+    });
+
+    var imageDel = document.createElement("img");
+    imageDel.setAttribute("class", "col delete-search");
+    imageDel.setAttribute("src","../../icons/trashcan.png");
+    imageDel.setAttribute("height","17");
+    imageDel.innerHTML = "O";
+
+    imgButton.appendChild(imageDel);
 
     row.appendChild(titre);
-    row.appendChild(actu);
+    row.appendChild(imgButton);
 
     item.appendChild(row);
 
@@ -36,7 +57,7 @@ function insertElementIntoSearchList(text) {
 
 async function loadList() {
     var listeSearch = await browser.storage.local.get("currentSearches");
-    console.log(listeSearch.currentSearches);
+
     for(const e of listeSearch.currentSearches){
         insertElementIntoSearchList(e);
     }
@@ -46,6 +67,5 @@ function clearStorage(){
     browser.storage.local.set({"currentSearches": []});
 }
 
-//clearStorage();
 loadList();
 document.querySelector("form").addEventListener("submit", newSearch);

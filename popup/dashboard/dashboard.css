@@ -23,6 +23,9 @@ body, html{
 
 
 .delete-search{
-    border-left:1px solid grey;
     max-width: 1px;
+}
+
+.delete-button{
+
 }
