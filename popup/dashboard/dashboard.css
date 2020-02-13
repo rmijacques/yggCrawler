@@ -1,0 +1,17 @@
+body, html{
+    width:300px;
+}
+
+.welcome{
+    display:block;
+    text-align: center;
+    /* margin: 3% auto; */
+    padding: 10px;
+    font-size: 1.2em;
+    background: lightgray;
+}
+
+
+.actualize-button{
+    border-left:1px solid grey;
+}
