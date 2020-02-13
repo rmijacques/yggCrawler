@@ -17,11 +17,13 @@ function insertElementIntoSearchList(text) {
     row.setAttribute("class", "row");
 
     var titre = document.createElement("div");
-    titre.setAttribute("class", "col-9");
+    titre.setAttribute("class", "col-9 overflow-hidden");
     titre.innerHTML = text;
 
-    var actu = document.createElement("div");
-    actu.setAttribute("class", "col actualize-button");
+    var actu = document.createElement("img");
+    actu.setAttribute("class", "col delete-search");
+    actu.setAttribute("src","../../icons/trashcan.png");
+    actu.setAttribute("height","30");
     actu.innerHTML = "O";
 
     row.appendChild(titre);
