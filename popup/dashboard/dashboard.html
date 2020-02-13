@@ -6,25 +6,27 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="dashboard.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="welcome">Welcome to your dashboard</div>
-    <ul class="list-group" id="liste_search">
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-9">Le chant du loup</div>
-                <div class="col actualize-button" id="test"></div>
+    <div class="container overflow-auto" id="current-searches">
+        <ul class="list-group" id="liste_search">
+
+        </ul>
+    </div>
+
+    <div class="welcome">New search</div>
+    <div class="container text-center" id="search-area">
+        <form>
+            <div class="form-group mb2">
+                <input type="text" class="form-control" id="searchbox" placeholder="search" />
             </div>
-        </li>
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-9">Le chant du loup</div>
-                <div class="col actualize-button">O</div>
-            </div>
-        </li>
-    </ul>
+            <button class="btn btn-primary mb-2" onsubmit="return false;">Submit</button>
+
+        </form>
+    </div>
     <script src="dashboard.js"></script>
 
 </body>

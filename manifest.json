@@ -7,7 +7,7 @@
     "description": "search a torrent on ygg from the extension bar",
     "homepage_url": "https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/Your_second_WebExtension",
     "icons": {
-       "32": "icons/main-icon-32.png"
+       "48": "icons/main-icon-48.png"
     },
   
     "permissions": [
@@ -16,7 +16,7 @@
     ],
   
     "browser_action": {
-      "default_icon": "icons/main-icon-32.png",
+      "default_icon": "icons/main-icon-48.png",
       "default_title": "yggFollower",
       "default_popup": "popup/dashboard/dashboard.html"
     },

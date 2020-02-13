@@ -11,6 +11,16 @@ body, html{
     background: lightgray;
 }
 
+#search-area{
+    margin-top:10px;
+}
+
+#current-searches{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height:200px;
+}
+
 
 .actualize-button{
     border-left:1px solid grey;
