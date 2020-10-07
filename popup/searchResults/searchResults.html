@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="searchResults.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+</head>
+
+<body>
+    <div class="container fixed-top" >
+        <div class="row top-bar">
+            <div class="col-2 return-button">
+                <a href="#" id="return-button" class="fill-div">
+                    <img src="../../icons/back.png" />
+                </a>
+            </div>
+            <div class="col-7 welcome" id="search-name"></div>
+            <div class="col-2 welcome">
+
+                <a href="#" id="save-button" class="fill-div">
+                    <img src="../../icons/save.png" id="save-img" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container no-padding" style="margin-top: 60px !important;" id="conteneur-results">
+        <ul class="list-group" id="list-results">
+        </ul>
+    </div>
+
+    <script src="searchResults.js"></script>
+
+</body>
+
+</html>

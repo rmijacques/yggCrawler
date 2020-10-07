@@ -1,5 +1,5 @@
 body, html{
-    width:300px;
+    width:400px;
 }
 
 .welcome{
@@ -26,6 +26,15 @@ body, html{
     max-width: 1px;
 }
 
-.delete-button{
+.return-button{
+    margin-left:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right:0;
+    margin-right:0;
+    font-size: 1.2em;
+}
 
+.top-bar{
+    background: lightgray;
 }

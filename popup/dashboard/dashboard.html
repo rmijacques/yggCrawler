@@ -10,7 +10,17 @@
 </head>
 
 <body>
-    <div class="welcome">Welcome to your dashboard</div>
+    <div class="container">
+        <div class="row top-bar">
+            <div class="col welcome" id="search-name" style="padding-left:95px !important;">Dashboard</div>
+            <div class="col-2 return-button">
+                <a href="#" id="settings-button" class="fill-div" style="margin:0;padding:0">
+                    <img src="../../icons/settings.png"/>
+                </a>
+            </div>
+            
+        </div>
+    </div>
     <div class="container overflow-auto" id="current-searches">
         <ul class="list-group" id="liste_search">
 
@@ -23,6 +33,15 @@
             <div class="form-group mb2">
                 <input type="text" class="form-control" id="searchbox" placeholder="search" />
             </div>
+            <div class="form-group mb2">
+                <select class="form-control" id="category">
+                    <option value="0">All</option>
+                    <option value="2145">Videos</option>
+                    <option value="2144">Applications</option>
+                    <option value="2142">Video Games</option>
+                    <option value="2140">Ebooks</option>
+                </select>
+              </div>
             <button class="btn btn-primary mb-2" onsubmit="return false;">Submit</button>
 
         </form>

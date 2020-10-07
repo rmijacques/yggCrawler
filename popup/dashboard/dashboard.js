@@ -1,10 +1,13 @@
 async function newSearch() {
     var search = document.getElementById("searchbox").value;
     var cs = await browser.storage.local.get("currentSearches");
+    
 
-    cs.currentSearches.push(search);
-    await browser.storage.local.set(cs);
-    loadList()
+    var elem = document.getElementById("category");
+    var cat = elem.options[elem.selectedIndex].value;
+
+    window.location.href="../searchResults/searchResults.html?search="+search.replace(" ","+")+"&category="+cat;
+
 }
 
 async function deleteSearch(search) {
@@ -32,6 +35,11 @@ function insertElementIntoSearchList(text) {
     var titre = document.createElement("div");
     titre.setAttribute("class", "col-9 overflow-hidden");
     titre.innerHTML = text;
+    titre.addEventListener("click",function(){
+        var elem = document.getElementById("category");
+        var cat = elem.options[elem.selectedIndex].value;
+        window.location.href="../searchResults/searchResults.html?search="+text.replace(" ","+")+"&category="+cat;
+    })
 
     var imgButton = document.createElement("button");
     imgButton.setAttribute("class","btn btn-danger delete-button btn-sm");
@@ -65,7 +73,18 @@ async function loadList() {
 
 function clearStorage(){
     browser.storage.local.set({"currentSearches": []});
+    console.log("Storage cleared !")
 }
 
+if(browser.storage.local.get("currentSearches",(elem)=>{
+    console.log(Object.entries(elem))
+    if(Object.entries(elem).length > 0){
+        clearStorage();
+    }
+}))
 loadList();
 document.querySelector("form").addEventListener("submit", newSearch);
+
+document.getElementById("settings-button").addEventListener("click",function(){
+    window.location.href = "../settings/settings.html"
+})
